@@ -60,6 +60,9 @@
         (resources.Get "css/misc.css")
     | resources.Concat "style.css" | minify | fingerprint }}
     <link rel="stylesheet" type="text/css" href="{{ $CSS.RelPermalink }}" media="all">
+    {{ range .Site.Params.custom_css -}}
+      <link rel="stylesheet" href="{{ . | absURL }}">
+    {{- end }}
   </head>
 
   <body>
@@ -69,6 +72,8 @@
             {{ range .Site.Menus.main }}
                 <li><a tabindex="-1" class="menu-link" href="{{ .URL | relURL }}">{{ safeHTML .Name }}</a></li>
             {{ end }}
+          <li id="search-container">{{ partial "search-form.html" . }}</li>
           </ul>
         </nav>
-        {{ end }}
+    <ul id="results"></ul>
+    {{ end }}

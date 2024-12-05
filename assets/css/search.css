@@ -1,19 +1,13 @@
 /* SEARCH */
 #search-input {
   padding: 6px;
-  width: 72%;
+  width: 100%;
+  max-width: 250px;
+  min-width: 220px;
 }
 
-@media screen and (min-width: 900px) {
-  #search-input {
-    width: 42%;
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  #search-input {
-    width: 33%;
-  }
+#search-container {
+  margin-top: 5px;
 }
 
 input {
