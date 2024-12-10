@@ -6,7 +6,7 @@
 }
 
 @font-face {
-  font-family: 'abc';
+  font-family: 'Themed';
   src: url('../fonts/Arashnaziblurb.ttf');
   font-weight: normal;
   font-style: normal;
@@ -63,8 +63,6 @@
   }
 }
 
-/* TODO: add iframe margins */
-
 /* HTML & BODY */
 html, body {
   height: 100%;
@@ -73,24 +71,15 @@ html, body {
 
 html {
   color: var(--text);
-  /* set in header*/
-  /* background-color: var(--background); */
   scroll-behavior: smooth;
 }
 
 
 body {
+  scroll-padding: 55px;
   margin-top: 0px;
   margin-left: 0px;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  /* font-family: Arial, sans-serif; */
-  /* font-family: Times New Roman, serif; */
-  /* "Inter", */
-  /* -apple-system, */
-  /* BlinkMacSystemFont, */
-  /* "Roboto", */
-  /* Helvetica, */
-  /* sans-serif; */
   line-height: 1.54;
   text-align: justify;
 }
@@ -101,34 +90,28 @@ body {
   overflow: visible;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 900px) {
   .wrapper {
-    /* margin: auto; */
-    max-width: 68vw;
-  }
-}
-
-@media screen and (min-width: 1150px) {
-  .wrapper {
-    /* margin: auto; */
     max-width: 62vw;
+  }
+  main, .home-content {
+    min-width: 650px;
   }
 }
 
 main {
   hyphens: none;
+  max-width: 100%;
 }
 
 /* BASIC HTML ELEMENTS */
 p {
   margin: 0.7em 0;
   font-size: .95em;
-  /* font-family: Times New Roman, serif; */
   font-family: Arial, sans-serif;
 }
 
 h1 {
-  /* font-family: "abc", Arial, sans-serif; */
   font-weight: normal;
   margin-bottom: 0px;
   font-size: 3em;
@@ -201,12 +184,10 @@ ul {
   padding-left: 2rem;
 }
 
-/* NOTE: fix for Inter font. */
 strong {
   font-weight: 600;
 }
 
-/* NOTE: fix for Inter font. */
 th {
   font-weight: 500;
 }

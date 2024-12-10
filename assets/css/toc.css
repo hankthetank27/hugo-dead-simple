@@ -70,3 +70,9 @@
   margin-bottom: 0.5em;
   font-weight: normal;
 }
+
+@media screen and (max-width: 760px) {
+#tableOfContentContainer {
+    display: none;
+  }
+}

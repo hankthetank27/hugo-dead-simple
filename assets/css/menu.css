@@ -27,7 +27,7 @@ nav {
 }
 
 #title {
-  font-family: "abc", Arial, sans-serif;
+  font-family: "Themed", Arial, sans-serif;
   font-size: 1.5em;
   margin-left: 20px;
   margin-right: 10px;
@@ -43,8 +43,8 @@ nav {
   white-space: nowrap;
 }
 
+
 #title:hover {
-  /* color: var(--text); */
   text-decoration: none;
 }
 
@@ -54,7 +54,6 @@ nav {
 }
 
 .menu a {
-  /* margin-right: 1.1em; */
   padding: 1px;
   text-decoration: none;
   font-size: .85em;
@@ -74,3 +73,15 @@ nav {
   text-decoration: underline;
 }
 
+@media screen and (max-width: 500px) {
+  #title {
+    margin-right: 0px;
+  }
+  #title::after {
+    margin-left: 8px;
+  }
+  .menu li::after {
+    margin-left: .7em;
+    margin-right: .7em;
+  }
+}
