@@ -1,5 +1,10 @@
 {{ partial "header.html" . }}
 
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+{{ if .Params.toc }}
+  {{ .TableOfContents }}
+{{ end }}
+</aside>
 
 {{ if .IsHome }}
     <!--TODO: replace with faster search-->
