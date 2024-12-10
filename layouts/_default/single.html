@@ -1,6 +1,14 @@
 {{ partial "header.html" . }}
 
 
+<aside class="hidden lg:block toc " id="tableOfContentContainer">
+{{ if .Params.toc }}
+  {{ .TableOfContents }}
+{{ end }}
+</aside>
+
+
+<main>
 {{ if not .Params.notitle }}
 <div id="single-header">
   <h1>
@@ -19,15 +27,8 @@
 {{ else }}
 <div style="padding-bottom: 1px;"></div>
 {{ end }}
-
-{{ if .Params.toc }}
-<aside class="hidden lg:block toc " id="tableOfContentContainer">
-  {{ .TableOfContents }}
-</aside>
-{{ end }}
-
-
-<main>{{ .Content }}</main>
+  {{ .Content }}
+</main>
 
 {{ if .Params.Next }}
     <br>

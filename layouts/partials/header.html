@@ -15,8 +15,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ relURL "favicon-16x16.png" }}">
     <link rel="manifest" href="{{ relURL "site.webmanifest" }}">
 
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1b" />
+    <meta name="theme-color" content="#1b1b1b" />
 
     <meta name="description" content="{{ .Title }}">
 
@@ -30,15 +29,10 @@
         <title>{{ .Title }} | {{ .Site.Title }}</title>
     {{ end }}
 
-    <!-- Prevent flicker on page load. -->
+    <!-- --background: rgb(53, 53, 53); -->
     <style>
         :root {
-          --background: #ffffff;
-        }
-        @media (prefers-color-scheme: dark) {
-          :root {
-            --background: #1b1b1b;
-          }
+          --background: #1b1b1b;
         }
         html {
             background-color: var(--background);
@@ -66,14 +60,14 @@
   </head>
 
   <body>
-        {{ if not .Params.nomenu }}
-        <nav>
+    {{ if not .Params.nomenu }}
+        <nav id="top-nav">
+        <a id="title" href="/">{{ .Site.Title }}</a>
           <ul class="menu">
             {{ range .Site.Menus.main }}
                 <li><a tabindex="-1" class="menu-link" href="{{ .URL | relURL }}">{{ safeHTML .Name }}</a></li>
             {{ end }}
-          <li id="search-container">{{ partial "search-form.html" . }}</li>
           </ul>
         </nav>
-    <ul id="results"></ul>
+    <div class="wrapper">
     {{ end }}
